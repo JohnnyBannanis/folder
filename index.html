@@ -1,0 +1,376 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Apuntes R - Juan Maldonado</title>
+			<meta charset="utf-8" />
+			<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+			<meta name="description" content="" />
+			<meta name="keywords" content="" />
+			<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+
+	<body class="is-preload">
+
+		<!-- Header -->
+		<header id="header">
+			<a class="logo" href="index.html">Apuntes R</a>
+		</header>
+
+
+		<!-- Heading -->
+		<div id="heading" >
+			<h1>Apuntes de R - Inferencia estadistica</h1>
+		</div>
+
+		<!-- Main -->
+		<section id="main" class="wrapper">
+		<div class="inner">
+		<div class="content">
+
+<p>Estos apuntes reflejan el progreso en las clases de laboratorio utilizando el lenjuage de programacion R Proyect orientado al curso de Inferencia Estadistica basado en el documento "Computacón IV:
+introducción al software estadistico R" de Moreno Bevilacqua, Departamento de estadística, Universidad de Valparaíso
+</p>
+</section>
+
+		<a id="1"></a>
+		<section id="main" class="wrapper">
+		<div class="inner">
+		<div class="content">
+
+			<header>
+				<h2>1 : Algunos conceptos antes de empezar</h2>
+			</header>
+
+<h3>1.4 : La ayuda en linea</h3>
+<p>La ayuda en líınea de R presenta informaciones muy utiles sobre como utilizar las funciones. Podemos encontrar directamente la ayuda para una funcion dada en especfico anteponiendo el caracter <code>?</code> a dicha función.
+Al ejecutarse la ayuda nos mostrara una pagina html con la informacion relativa a la funcion, como opciones, argumentos y ejemplos</p>
+
+<pre class="r"><code>?lm    #Ayuda relacionada a montaje de modelos lineales
+
+?plot  #Ayuda relacionada a trazado generico X-Y</code></pre>
+
+<p>Otra forma de acceder a la ayuda es a travez del comando <code>help</code></p>
+
+<pre class="r"><code>help(plot)</code></pre>
+
+<p>En el caso que se desee acceder a la pagina principal de ayuda podremos utilizar un metodo de la clase <code>help</code></p>
+<pre class="r"><code>help.start()</code></pre>
+</section>
+
+		<a id="2"></a>
+
+		<section id="main" class="wrapper">
+		<div class="inner">
+		<div class="content">
+
+			<header>
+				<h2>2 : Introducción a R</h2>
+			</header>
+
+<h3>2.1 : Empezar y cerrar una sesion de R</h3>
+
+<p>Para empezar y finalizar una sesión de R, desde la aplicacion debemos escribir <code>q()</code>, posteriromente nos preguntara si deseamos guardar los datos. Dicha accicon guardara el ambiente de trabajo en nuestra carpeta de trabajo en el archivo de extencion .Rdata</p>
+<p>Para conocer cual es nuestro directorio de trabajo (working directory) debemos ejecutar el siguiente comando.</p>
+<pre class="r"><code>getwd()</code></pre>
+<p>Si deseamos cambiar el directorio de trabajo debemos ejecutar el comando <code>setwd("ruta")</code> ingresando la ruta deseada como parametro. A continuacion un ejemplo.</p>
+<pre class="r"><code>setwd("c:/nuevo_directorio")</code></pre>
+<p>Para visualizar los archivos existentes en nustro directorio R cuanta con una funcion para listarlos</p>
+<pre class="r"><code>ls()</code></pre>
+<p>Eliminacion de archivos del directorio</p>
+<pre class="r"><code>rm(archivo)		#remueve un archivo
+
+rm(archivo1,archivo2)	#remueve varios archivos
+
+rm(list = ls())		#remueve todos los archivos</code></pre>
+
+<p>Guardado y cargado del workspace</p>
+<pre class="r"><code>save.image(file="myfile.RData")	#Guardar
+load("myfile.RData")		#Cargar</code></pre>
+<hr />
+
+
+<h3>2.2 : Aritmética básica</h3>
+
+<p>R, al igual que una calculadora, puede resolver distintas operaciones artiméticas (suma, resta, multiplicación, etc) mediante la unión de números y el simbolo de operación. Cada operacion que se escriba será evaluada</p>
+<p><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%/%</code> <code>%%</code></p>
+<pre class="r"><code>2+5+0+3		#suma
+20-3-2-0	#resta
+2*(10+10)	#multiplicación
+(60/3)-10	#división
+5%/%3		#división entera
+5%%3		#modulo</code></pre>
+<p> Resultados de las operaciones</p>
+<pre><code>## [1] 10
+## [1] 15
+## [1] 40
+## [1] 10
+## [1] 1
+## [1] 2</code></pre>
+
+<p>Además R posee todas las funciones matimaticas clasicas presentadas en la sigueinte tabla</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Función</th>
+			<th>Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align: center"><code>sqrt()</code></td>
+			<td>Raiz cuadrada</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>abs()</code></td>
+			<td>Valor absoluto</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>pi</code></td>
+			<td>Valor de pi = 3.14…</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>sin()	cos()	tan()</code></td>
+			<td>Funciones trigonométricas</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>asin() acos() atan()</code></td>
+			<td>Funciones trigonométricas inversas</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>exp()	log()</code></td>
+			<td>Exponencial y logaritmo</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Ejemplo de utilizacion de funciones matematicas.</p>
+<pre class="r"><code>abs(sqrt(25)*cos(1)+exp(2)-100)</code></pre>
+<pre class="r"><code>##[1] 89.90943</code></pre>
+<hr />
+
+<h3>2.3 : Asignación de valores</h3>
+<p>Se puede guardar un valor en una variable o un objeto haciendo uso del simbolo <code><-</code> o el simbolo <code>=</code> </p>
+<pre class="r"><code>x <- 10
+variable = 10
+x*variable</code></pre>
+<pre class="r"><code>##[1] 100</code></pre>
+<hr />
+
+<h3>2.4 : Valores lógicos</h3>
+<p>R permite la capacidad de ejecutar operaciones y variables lógicas. Estas nos ayudan a la comparacion de valores numericos o expreciones lógicas. Estas operaciones pueden retornar los valores lógicos o binarios <code>TRUE</code> y <code>FALSE</code>.</p>
+
+<table>
+	<thead>
+		<tr>
+			<th>Operador lógico</th>
+			<th>Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align: center"><code>&lt;</code></td>
+			<td>Menor que</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>&gt;</code></td>
+			<td>Mayor que</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>&lt;=</code></td>
+			<td>Menor o igual que</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>&gt;=</code></td>
+			<td>Mayor o igual que</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>!</code></td>
+			<td>Negación lógica</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>&amp;</code></td>
+			<td>Conjunción lógica "AND"</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>|</code></td>
+			<td>Disjunción lógica “OR”</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>==</code></td>
+			<td>Igual que</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>!=</code></td>
+			<td>Distinto que</td>
+		</tr>
+	</tbody>
+</table>
+
+<p>Ejemplo de utilización de operadores lógicos</p>
+
+<pre class="r"><code>l = 2 &lt; 4
+print(l)</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+<pre class="r"><code>op = l &amp; FALSE
+print(op)</code></pre>
+<pre><code>## [1] FALSE</code></pre>
+<pre class="r"><code>!op == l</code></pre>
+<pre><code>## [1] TRUE</code></pre>
+
+<hr />
+<h3>2.5 : Gestión de vectores</h3>
+
+<h4>2.5.1 : Creación de vectores</h4>
+<p>Para la creacion podemos asignar a una variable la funcion <code>c()</code> donde podremos ingresas como parámetro tantos atributos como se desee separados por una <code>,</code>
+<pre><code>x = c(1,2,3,4)
+x</code></pre>
+<pre><code>[1] 1 2 3 4</code></pre>
+<p>Si es necesario añadir muchos elementos al vector se puede utilizar el metodo <code>scan()</code> el cual solicitará ingresar los valores por teclado, y se detendra cuando se ingrese un valor vacío. Tambien es posible limitar la lectura a un numero de elementos utilizando el parametro <code>nmax</code>,
+por ejemplo <code>x = scan(nmax=5)</code> solo podremos ingresar 5 valores</p>
+<pre><code>x = scan()</code></pre>
+<pre><code>1: 45
+2: 1
+3: 23
+4: 0
+5: 2
+6: 1
+7:			#recive valor vacío
+Read 6 items		#indica que termino la lectura y agregó 6 valores</code></pre>
+<pre><code>print(x)		#Mostramos el vector creado</code></pre>
+<pre><code>## [1] 45  1 23  0  2  1</code></pre>
+<p>Otra particularidad de utilizar el metodo <code>scan()</code> es que nos permite rellenar un vector a traves de la lectura de un archivo que se encuentre en el workspace. Supongamos el caso que se tenga el siguiente archivo:</p>
+<pre><code>datos.txt:
+1 2 3 4 5 6 7 8 9 0</code></pre>
+<pre><code>#Realizamos la lectura con el comando:
+vector = scan("datos.txt")
+vector</code></pre>
+<pre><code>## [1] 1 2 3 4 5 6 7 8 9 0</code></pre>
+
+
+<h4>2.5.2 : Secuencias numéricas</h4>
+
+<p>Otra forma de creear vectores es a travez de secuancias <code>ni:nf</code> siendo <code>ni</code> el valor inicial y <code>nf</code> el final, incluso pueden ser en orden decreciente </p>
+<pre><code>v = 0:15
+v_d = 10:1
+print(v)
+print(v_d)</code></pre>
+<pre><code>## [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</code></pre>
+<pre><code>## [1] 10  9  8  7  6  5  4  3  2  1</code></pre>
+
+<p>Es posible crear una secuancia por medio de la repeticon de un numero utilizando <code>rep(n, v)</code> siendo <code>n</code> el valor a repetir y <code>v</code> la cantidad de veces</p>
+<pre><code>repetido = rep(2,5)
+print(repetido)</code></pre>
+<pre><code>## [1] 2  2  2  2  2</code></pre>
+
+<h4>2.5.3 : Extracción de los elementos de un vector</h4>
+
+<p>Los elementos de un vector pueden ser extraídos utilizando <code>[n]</code>, donde <code>n</code> es la posicion del vector a la cual deseamos acceder. Es tambien posible extraer subconjuntos de un vector indicando los indices para nuestro subconjunto <code>[c(x1, x2, x3, xn)]</code> o bien utilizar una secuancia <code>[ni:nf]</code></p>
+
+<pre><code>nums = 1:100
+nums[50]</code></pre>
+<pre><code>## [1] 50</code></pre>
+<pre><code>nums[c(1,5,90)]</code></pre>
+<pre><code>## [1]  1  5  90</code></pre>
+<pre><code>nums[50:60]</code></pre>
+
+<pre><code>## [1] 50  51  52  53  54  55  56  57  58  59  60</code></pre>
+
+<h4>Operaciones de vectores</h4>
+<table>
+	<thead>
+		<tr>
+			<th>Función</th>
+			<th>Descripción</th>
+		</tr>
+	</thead>
+	<tbody>
+		<tr>
+			<td style="text-align: center"><code>length(x)</code></td>
+			<td>Largo del vector</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>max(x)</code></td>
+			<td>Mayor valor del vector</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>min(x)</code></td>
+			<td>Menor valor del vector</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>sum(x)</code></td>
+			<td>Suma de todos los elementos del vector</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>prod(x)</code></td>
+			<td>Producto de todos los elementos del vector</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>sort(x)</code></td>
+			<td>Ordena vector de menor a mayor</td>
+		</tr>
+		<tr>
+			<td style="text-align: center"><code>sort.list(x)</code></td>
+			<td>Retorna un vector con los indices de valores menores a mayores</td>
+		</tr>
+		<tr>
+	</tbody>
+</table>
+
+<hr />
+
+<h3>2.6 : Elementos de programación en R</h3>
+
+<p>Al igual que en otros lenguajes de programación es posible crear funciones en R utilizando la siguiente sintaxis.</p>
+
+<pre><code>nombrefun <- function(a, b, c, ...) {
+}</code></pre>
+<p>como se observa en el ejemplo <code>a</code>, <code>b</code> y <code>c</code> son parametros de la funcion <code>numbrefun</code>.
+Los parametros pueden tomar un valor por defecto si se les asigna en la declaracion, como por ejemplo: <code>function(a,b=5,c)</code> donde <code>b</code> tomará el valor 5.</p>
+<p>Creando función que calcule la mediana : Para el algoritmo debemos comprobar si nuestro vector es par o impar, en el caso de ser impar nuestra mediana sera (largo del vector + 1)/2.
+De lo contrario si es par la mediana sera el promedio entre los valores ubucados en la posicion (largo/2)  y (largo/2 + 1)</p>
+
+<pre><code>mediana <- function(a){
+  if(length(a)%%2 == 0){
+    b = sort(a)
+    m = (b[length(b)/2] + b[(length(b)/2)+1])/2
+  }
+  else{
+    b = sort(a)
+    m = b[(length(b)+1)/2]
+  }
+  return(m)
+}</code></pre>
+
+<pre><code>x = c(1,2,3,4,5)
+mediana(x)</code></pre>
+
+<pre><code>## [1] 5</code></pre>
+<hr />
+<h3>2.7 : </h3>
+
+
+
+<hr />
+</section>
+
+
+		<!-- Footer -->
+		<footer id="footer">
+			<div class="inner">
+				<div class="content">
+				<p>Juan Ignacio Maldonado Rosas  |  Universidad Catolica del Maule  |  Ingenieria Civil Informatica ingreso 2016  |  Inferencia Estadistica - Primer semestre 2018</p>
+				</div>
+			</div>
+		</footer>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
