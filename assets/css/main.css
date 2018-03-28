@@ -205,10 +205,10 @@ code {
 pre {
   -webkit-overflow-scrolling: touch;
   font-family: "Courier New", monospace;
-  color :#000000;
   font-size: 0.9rem;
   margin: 0 0 2rem 0; }
   pre code {
+    color :#000000;
     font-weight: normal;
     display: block;
     line-height: 1.75;
