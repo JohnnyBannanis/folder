@@ -197,8 +197,8 @@ code {
   border: solid 1px;
   font-family: "Courier New", monospace;
   font-size: 0.9rem;
-  margin: 0 0.25rem;
-  padding: 0.25rem 0.65rem; }
+  margin: 0 0.1rem;
+  padding: 0.25rem 0.5rem; }
 
 pre {
   -webkit-overflow-scrolling: touch;
@@ -621,10 +621,10 @@ table {
   table td {
     padding: 0.75rem 0.75rem; }
   table th {
-    font-size: 0.9rem;
+    font-size: 1rem;
     font-weight: 600;
     padding: 0 0.75rem 0.75rem 0.75rem;
-    text-align: left; }
+    text-align: center; }
   table thead {
     border-bottom: solid 2px; }
   table tfoot {
@@ -2665,7 +2665,7 @@ body {
   background: #ffffff;
   border-radius: 4px;
   box-shadow: 0px 0px 4px 1px rgba(0, 0, 0, 0.025);
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   padding: 3rem; }
   @media screen and (max-width: 980px) {
     #main .content {
