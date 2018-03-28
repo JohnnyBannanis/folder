@@ -19,7 +19,7 @@
 		<header id="header">
 			<a class="logo" href="index.html">Apuntes R</a>
 			<nav>
-				<a href="#menu">Menu</a>
+				<a href="#menu">Menú</a>
 			</nav>
 		</header>
 
@@ -31,7 +31,7 @@
 			<ul class="links">
 				<li><a href="index.html#1">Antes de empezar</a></li>
 				<li><a href="index.html#2">Introducción a R</a></li>
-				<li><a href="index.html#2_2">Aritmetica basica</a></li>
+				<li><a href="index.html#2_2">Aritmética básica</a></li>
 				<li><a href="index.html#2_3">Asignación de valores</a></li>
 				<li><a href="index.html#2_4">Valores lógicos</a></li>
 				<li><a href="index.html#2_5">Vectores</a></li>
@@ -54,8 +54,8 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<div class="content">
-					<p>Estos apuntes reflejan el progreso en las clases de laboratorio utilizando el lenjuage de programacion R Proyect orientado al curso de Inferencia Estadistica basado en el documento "Computacón IV:
-						introducción al software estadistico R" de Moreno Bevilacqua, Departamento de estadística, Universidad de Valparaíso
+					<p>Estos apuntes reflejan el progreso en las clases de laboratorio utilizando el lenguage de programación R Proyect orientado al curso de Inferencia Estadistica basado en el documento "Computación IV:
+						introducción al software estadístico R" de Moreno Bevilacqua, Departamento de estadística, Universidad de Valparaíso
 					</p>
 		</section>
 
@@ -72,20 +72,20 @@
 				<h2>1 : Algunos conceptos antes de empezar</h2>
 			</header>
 
-			<h3>1.4 : La ayuda en linea</h3>
-			<p>La ayuda en líınea de R presenta informaciones muy utiles sobre como utilizar las funciones. Podemos encontrar directamente la ayuda para una funcion dada en especfico anteponiendo el caracter <code>?</code> a dicha función.
-				Al ejecutarse la ayuda nos mostrara una pagina html con la informacion relativa a la funcion, como opciones, argumentos y ejemplos</p>
+			<h3>1.4 : La ayuda en línea</h3>
+			<p>La ayuda en línea de R presenta informaciones muy útiles sobre como utilizar las funciones. Podemos encontrar directamente la ayuda para una funcion dada en específico anteponiendo el caracter <code>?</code> a dicha función.
+				Al ejecutarse la ayuda nos mostrará una página html con la información relativa a la función, como opciones, argumentos y ejemplos.</p>
 
-				<pre class="r"><code>?lm    #Ayuda relacionada a montaje de modelos lineales
+				<pre><code>?lm    #Ayuda relacionada a montaje de modelos lineales
 
 ?plot  #Ayuda relacionada a trazado generico X-Y</code></pre>
 
-			<p>Otra forma de acceder a la ayuda es a travez del comando <code>help</code></p>
+			<p>Otra forma de acceder a la ayuda es a través del comando <code>help</code></p>
 
-			<pre class="r"><code>help(plot)</code></pre>
+			<pre><code>help(plot)</code></pre>
 
-			<p>En el caso que se desee acceder a la pagina principal de ayuda podremos utilizar un metodo de la clase <code>help</code></p>
-			<pre class="r"><code>help.start()</code></pre>
+			<p>En el caso que se desee acceder a la página principal de ayuda podremos utilizar un método de la clase <code>help</code>.</p>
+			<pre><code>help.start()</code></pre>
 		</section>
 
 
@@ -100,17 +100,17 @@
 				<h2>2 : Introducción a R</h2>
 			</header>
 
-			<h3>2.1 : Empezar y cerrar una sesion de R</h3>
+			<h3>2.1 : Empezar y cerrar una sesión de R</h3>
 
-			<p>Para empezar y finalizar una sesión de R, desde la aplicacion debemos escribir <code>q()</code>, posteriromente nos preguntara si deseamos guardar los datos. Dicha accicon guardara el ambiente de trabajo en nuestra carpeta de trabajo en el archivo de extencion .Rdata</p>
-			<p>Para conocer cual es nuestro directorio de trabajo (working directory) debemos ejecutar el siguiente comando.</p>
-			<pre class="r"><code>getwd()</code></pre>
-			<p>Si deseamos cambiar el directorio de trabajo debemos ejecutar el comando <code>setwd("ruta")</code> ingresando la ruta deseada como parametro. A continuacion un ejemplo.</p>
-			<pre class="r"><code>setwd("c:/nuevo_directorio")</code></pre>
-			<p>Para visualizar los archivos existentes en nustro directorio R cuanta con una funcion para listarlos</p>
-			<pre class="r"><code>ls()</code></pre>
-			<p>Eliminacion de archivos del directorio</p>
-			<pre class="r"><code>rm(archivo)		#remueve un archivo
+			<p>Para empezar y finalizar una sesión de R, desde la aplicación debemos escribir <code>q()</code>, posteriormente nos preguntará si deseamos guardar los datos. Dicha accion guardará el ambiente de trabajo en nuestra carpeta de trabajo en el archivo de extención .Rdata</p>
+			<p>Para conocer cúal es nuestro directorio de trabajo (working directory) debemos ejecutar el siguiente comando:</p>
+			<pre><code>getwd()</code></pre>
+			<p>Si deseamos cambiar el directorio de trabajo debemos ejecutar el comando <code>setwd("ruta")</code>, ingresando la ruta deseada como parámetro. A continuación un ejemplo.</p>
+			<pre><code>setwd("c:/nuevo_directorio")</code></pre>
+			<p>Para visualizar los archivos existentes en nuestro, directorio R cuenta con una función para listarlos.</p>
+			<pre><code>ls()</code></pre>
+			<p>Eliminación de archivos del directorio</p>
+			<pre><code>rm(archivo)		#remueve un archivo
 
 rm(archivo1,archivo2)	#remueve varios archivos
 
