@@ -633,16 +633,18 @@ nums[50:60]</code></pre>
   bii = tuk[2]
   bis = tuk[3]
   bes = tuk[4]
-  Parametro = c(" ","datos ","maximo ","minimo ","media ","moda ",
+  cat("Datos: ",v,"\n")
+  cat("Modas: ",mod,"\n")
+  Parametro = c(" ","maximo ","minimo ","media ","moda menor ",
                 "mediana ","rango ","rango intercuartil ","cuartil 1 ","cuartil 2 ","cuartil 3 ",
                 "varianza ","coeficiente de variacion %","desviacion estandar ","desviacion media ","barreras de tukey:   ",
                 "exterior inferior ","interior inferior ","interior superior ","exterior superior ",
                 "coeficiente de asimetria ","curtosis ")
-  Valor = c(" ",paste(v,collapse = ","), max(v), min(v), prom, paste(mod,collapse = ","), med, rang,
+  Valor = c(" ", max(v), min(v), prom, min((mod)), med, rang, 
             ri, q1, q2, q3, var, cv, s, dm, "", bei, bii, bis, bes, ses, k)
   tabla = data.frame(Parametro,Valor)
   return(tabla)
-}
+  }
 </pre></code>
 
 <pre><code>datos = c(1,5,20,10,6,15,22,11,10)
@@ -650,30 +652,31 @@ explorar(datos)
 
 Q1 = 5.5 Q2 = 10 Q3 = 17.5
 Barreras: BEI =  -30.5 ,  BII =  -12.5 ,  BIS =  35.5 ,  BES =  53.5
-                    Parametro                   Valor
-1
-2                      datos  1,5,20,10,6,15,22,11,10
-3                     maximo                       22
-4                     minimo                        1
-5                      media         11.1111111111111
-6                       moda                       10
-7                    mediana                       10
-8                      rango                       21
-9         rango intercuartil                       12
-10                 cuartil 1                      5.5
-11                 cuartil 2                       10
-12                 cuartil 3                     17.5
-13                  varianza         47.6111111111111
-14 coeficiente de variacion %        62.1007246334534
-15       desviacion estandar         6.90008051482815
-16          desviacion media         5.25925925925926
-17      barreras de tukey:
-18         exterior inferior                    -30.5
-19         interior inferior                    -12.5
-20         interior superior                     35.5
-21         exterior superior                     53.5
-22  coeficiente de asimetria         1.99081850668208
-23                  curtosis         14.5852505302161
+Datos:  1 5 20 10 6 15 22 11 10 
+Modas:  10 
+                    Parametro	            Valor
+1                            	                 
+2                     maximo 	               22
+3                     minimo 	                1
+4                      media 	 11.1111111111111
+5                 moda menor 	               10
+6                    mediana 	               10
+7                      rango 	               21
+8         rango intercuartil 	               12
+9                  cuartil 1 	              5.5
+10                 cuartil 2 	               10
+11                 cuartil 3 	             17.5
+12                  varianza 	 47.6111111111111
+13 coeficiente de variacion %	 62.1007246334534
+14       desviacion estandar 	 6.90008051482815
+15          desviacion media 	 5.25925925925926
+16      barreras de tukey:   	                 
+17         exterior inferior 	            -30.5
+18         interior inferior 	            -12.5
+19         interior superior 	             35.5
+20         exterior superior 	             53.5
+21  coeficiente de asimetria  	 1.99081850668208
+22                  curtosis 	 14.5852505302161
 
 
 </pre></code>
