@@ -19,7 +19,7 @@
 		<header id="header">
 			<a class="logo" href="index.html">Apuntes R</a>
 			<nav>
-				<a href="#menu">Menú</a>
+				<a href="#menu">Índice</a>
 			</nav>
 		</header>
 
@@ -36,6 +36,7 @@
 				<li><a href="index.html#2_4">Valores lógicos</a></li>
 				<li><a href="index.html#2_5">Vectores</a></li>
 				<li><a href="index.html#2_6">Funciones</a></li>
+				<li><a href="index.html#expl">Explorar</a></li>
 			</ul>
 		</nav>
 
@@ -54,7 +55,7 @@
 		<section id="main" class="wrapper">
 			<div class="inner">
 				<div class="content">
-					<p>Estos apuntes reflejan el progreso en las clases de laboratorio utilizando el lenguaje de programación R Proyect orientado al curso de Inferencia Estadistica basado en el documento "Computación IV:
+					<p>Estos apuntes reflejan el progreso en las clases de laboratorio utilizando el lenguaje de programación R Proyect orientado al curso de Inferencia Estadística basándose en la materia vista en las cátedras referentes a estadística descriptiva y en el documento "Computación IV:
 						introducción al software estadístico R" de Moreno Bevilacqua, Departamento de estadística, Universidad de Valparaíso
 					</p>
 		</section>
@@ -73,14 +74,14 @@
 			</header>
 
 			<h3>1.4 : La ayuda en línea</h3>
-			<p>La ayuda en línea de R presenta informaciones muy útiles sobre como utilizar las funciones. Podemos encontrar directamente la ayuda para una funcion dada en específico anteponiendo el caracter <code>?</code> a dicha función.
-				Al ejecutarse la ayuda nos mostrará una página html con la información relativa a la función, como opciones, argumentos y ejemplos.</p>
+			<p>La ayuda en línea de R presenta informaciones muy útiles sobre cómo utilizar las funciones. Podemos encontrar directamente la ayuda para una función dada en específico anteponiendo el caracter <code>?</code> a dicha función.
+				Al ejecutarse la ayuda nos mostrará una página HTML con la información relativa a la función, como opciones, argumentos y ejemplos.</p>
 
 				<pre><code>?lm    #Ayuda relacionada a montaje de modelos lineales
 
 ?plot  #Ayuda relacionada a trazado generico X-Y</code></pre>
 
-			<p>Otra forma de acceder a la ayuda es a través del comando <code>help</code>. En el caso que se desee acceder 
+			<p>Otra forma de acceder a la ayuda es a través del comando <code>help</code>. En el caso que se desee acceder
 				a la página principal de ayuda podremos utilizar un método de la clase <code>help</code>.</p>
 
 			<pre><code>help(plot)
@@ -103,7 +104,7 @@ help.start()		#pagina principal de ayuda</code></pre>
 
 			<h3>2.1 : Empezar y cerrar una sesión de R</h3>
 
-			<p>Para empezar y finalizar una sesión de R, desde la aplicación debemos escribir <code>q()</code>, posteriormente nos preguntará si deseamos guardar los datos. Dicha accion guardará el ambiente de trabajo en nuestra carpeta de trabajo en el archivo de extención .Rdata</p>
+			<p>Para empezar y finalizar una sesión de R, desde la aplicación debemos escribir <code>q()</code>, posteriormente nos preguntará si deseamos guardar los datos. Dicha acción guardará el ambiente de trabajo en nuestra carpeta de trabajo en el archivo de extensión .Rdata</p>
 			<p>Para conocer cúal es nuestro directorio de trabajo (working directory) debemos ejecutar el siguiente comando:</p>
 			<pre><code>getwd()</code></pre>
 			<p>Si deseamos cambiar el directorio de trabajo debemos ejecutar el comando <code>setwd("ruta")</code>, ingresando la ruta deseada como parámetro. A continuación un ejemplo.</p>
@@ -111,6 +112,7 @@ help.start()		#pagina principal de ayuda</code></pre>
 			<p>Para visualizar los archivos existentes en nuestro, directorio R cuenta con una función para listarlos.</p>
 			<pre><code>ls()</code></pre>
 			<p>Eliminación de archivos del directorio</p>
+
 			<pre><code>rm(archivo)		#remueve un archivo
 
 rm(archivo1,archivo2)	#remueve varios archivos
@@ -118,7 +120,7 @@ rm(archivo1,archivo2)	#remueve varios archivos
 rm(list = ls())		#remueve todos los archivos</code></pre>
 
 			<p>Guardado y cargado del workspace</p>
-			<pre class="r"><code>save.image(file="myfile.RData")	#Guardar
+			<pre><code>save.image(file="myfile.RData")	#Guardar
 load("myfile.RData")		#Cargar</code></pre>
 			<hr />
 
@@ -129,7 +131,7 @@ load("myfile.RData")		#Cargar</code></pre>
 			<section class="wrapper">
 				<h3>2.2 : Aritmética básica</h3>
 
-				<p>R, al igual que una calculadora, puede resolver distintas operaciones artiméticas (suma, resta, multiplicación, etc) mediante la unión de números y el simbolo de operación. Cada operacion que se escriba será evaluada</p>
+				<p>R, al igual que una calculadora, puede resolver distintas operaciones aritméticas (suma, resta, multiplicación, etc) mediante la unión de números y el símbolo de operación. Cada operación que se escriba será evaluada</p>
 				<p><code>+</code> <code>-</code> <code>*</code> <code>/</code> <code>%/%</code> <code>%%</code></p>
 				<pre class="r"><code>2+5+0+3		#suma
 20-3-2-0	#resta
@@ -145,7 +147,7 @@ load("myfile.RData")		#Cargar</code></pre>
 ## [1] 1
 ## [1] 2</code></pre>
 
-				<p>Además R posee todas las funciones matimaticas clasicas presentadas en la sigueinte tabla</p>
+				<p>Además R posee todas las funciones matemáticas clásicas presentadas en la siguiente tabla</p>
 
 				<table>
 					<thead>
@@ -191,7 +193,7 @@ load("myfile.RData")		#Cargar</code></pre>
 			<a id="2_3"></a>
 			<section class="wrapper">
 				<h3>2.3 : Asignación de valores</h3>
-				<p>Se puede guardar un valor en una variable o un objeto haciendo uso del simbolo <code><-</code> o el simbolo <code>=</code> </p>
+				<p>Se puede guardar un valor en una variable o un objeto haciendo uso del símbolo <code><-</code> o el símbolo <code>=</code> </p>
 				<pre class="r"><code>x <- 10
 variable = 10
 x*variable</code></pre>
@@ -205,7 +207,7 @@ x*variable</code></pre>
 			<a id="2_4"></a>
 			<section class="wrapper">
 				<h3>2.4 : Valores lógicos</h3>
-				<p>R permite la capacidad de ejecutar operaciones y variables lógicas. Estas nos ayudan a la comparacion de valores numericos o expreciones lógicas. Estas operaciones pueden retornar los valores lógicos o binarios <code>TRUE</code> y <code>FALSE</code>.</p>
+				<p>R permite la capacidad de ejecutar operaciones y variables lógicas. Estas nos ayudan a la comparación de valores numéricos o expresiones lógicas. Estas operaciones pueden retornar los valores lógicos o binarios <code>TRUE</code> y <code>FALSE</code>.</p>
 
 				<table>
 					<thead>
@@ -274,11 +276,12 @@ print(op)</code></pre>
 			<section class="wrapper">
 				<h3>2.5 : Gestión de vectores</h3>
 				<h4>2.5.1 : Creación de vectores</h4>
-				<p>Para la creacion podemos asignar a una variable la funcion <code>c()</code> donde podremos ingresas como parámetro tantos atributos como se desee separados por una <code>,</code>
+				<p>Para la creación podemos asignar a una variable la función <code>c()</code> donde podremos ingresas como parámetro tantos atributos como se desee separados por una <code>,</code>
+
 				<pre><code>x = c(1,2,3,4)
 x</code></pre>
 				<pre><code>[1] 1 2 3 4</code></pre>
-				<p>Si es necesario añadir muchos elementos al vector se puede utilizar el metodo <code>scan()</code> el cual solicitará ingresar los valores por teclado, y se detendra cuando se ingrese un valor vacío. Tambien es posible limitar la lectura a un numero de elementos utilizando el parametro <code>nmax</code>,
+				<p>Si es necesario añadir muchos elementos al vector se puede utilizar el método <code>scan()</code> el cual solicitará ingresar los valores por teclado, y se detendrá cuando se ingrese un valor vacío. También es posible limitar la lectura a un número de elementos utilizando el parámetro <code>nmax</code>,
 					por ejemplo <code>x = scan(nmax=5)</code> solo podremos ingresar 5 valores</p>
 				<pre><code>x = scan()</code></pre>
 				<pre><code>1: 45
@@ -291,7 +294,7 @@ x</code></pre>
 Read 6 items		#indica que termino la lectura y agregó 6 valores</code></pre>
 				<pre><code>print(x)		#Mostramos el vector creado</code></pre>
 				<pre><code>## [1] 45  1 23  0  2  1</code></pre>
-				<p>Otra particularidad de utilizar el metodo <code>scan()</code> es que nos permite rellenar un vector a traves de la lectura de un archivo que se encuentre en el workspace. Supongamos el caso que se tenga el siguiente archivo:</p>
+				<p>Otra particularidad de utilizar el método <code>scan()</code> es que nos permite rellenar un vector a través de la lectura de un archivo que se encuentre en el workspace. Supongamos el caso que se tenga el siguiente archivo:</p>
 				<pre><code>datos.txt:
 1 2 3 4 5 6 7 8 9 0</code></pre>
 				<pre><code>#Realizamos la lectura con el comando:
@@ -302,14 +305,15 @@ vector</code></pre>
 
 
 				<h4>2.5.2 : Secuencias numéricas</h4>
-				<p>Otra forma de creear vectores es a travez de secuancias <code>ni:nf</code> siendo <code>ni</code> el valor inicial y <code>nf</code> el final, incluso pueden ser en orden decreciente </p>
+				<p>Otra forma de crear vectores es a través de secuencias <code>ni:nf</code> siendo <code>ni</code> el valor inicial y <code>nf</code> el final, incluso pueden ser en orden decreciente </p>
+
 				<pre><code>v = 0:15
 v_d = 10:1
 print(v)
 print(v_d)</code></pre>
 				<pre><code>## [1]  0  1  2  3  4  5  6  7  8  9 10 11 12 13 14 15</code></pre>
 				<pre><code>## [1] 10  9  8  7  6  5  4  3  2  1</code></pre>
-				<p>Es posible crear una secuancia por medio de la repeticon de un numero utilizando <code>rep(n, v)</code> siendo <code>n</code> el valor a repetir y <code>v</code> la cantidad de veces</p>
+				<p>Es posible crear una secuencia por medio de la repetición de un numero utilizando <code>rep(n, v)</code> siendo <code>n</code> el valor a repetir y <code>v</code> la cantidad de veces</p>
 				<pre><code>repetido = rep(2,5)
 print(repetido)</code></pre>
 				<pre><code>## [1] 2  2  2  2  2</code></pre>
@@ -317,7 +321,7 @@ print(repetido)</code></pre>
 
 
 				<h4>2.5.3 : Extracción de los elementos de un vector</h4>
-				<p>Los elementos de un vector pueden ser extraídos utilizando <code>[n]</code>, donde <code>n</code> es la posicion del vector a la cual deseamos acceder. Es tambien posible extraer subconjuntos de un vector indicando los indices para nuestro subconjunto <code>[c(x1, x2, x3, xn)]</code> o bien utilizar una secuancia <code>[ni:nf]</code></p>
+				<p>Los elementos de un vector pueden ser extraídos utilizando <code>[n]</code>, donde <code>n</code> es la posición del vector a la cual deseamos acceder. Es también posible extraer subconjuntos de un vector indicando los índices para nuestro subconjunto <code>[c(x1, x2, x3, xn)]</code> o bien utilizar una secuencia <code>[ni:nf]</code></p>
 				<pre><code>nums = 1:100
 nums[50
 ## [1] 50
@@ -380,11 +384,15 @@ nums[50:60]</code></pre>
 					<p>Al igual que en otros lenguajes de programación es posible crear funciones en R utilizando la siguiente sintaxis.</p>
 					<pre><code>nombrefun <- function(a, b, c, ...) {
 }</code></pre>
-					<p>como se observa en el ejemplo <code>a</code>, <code>b</code> y <code>c</code> son parametros de la funcion <code>numbrefun</code>.
-						Los parametros pueden tomar un valor por defecto si se les asigna en la declaracion, como por ejemplo: <code>function(a,b=5,c)</code> donde <code>b</code> tomará el valor 5.</p>
-					<p>Creando función que calcule la mediana : Para el algoritmo debemos comprobar si nuestro vector es par o impar, en el caso de ser impar nuestra mediana sera (largo del vector + 1)/2.
-						De lo contrario si es par la mediana sera el promedio entre los valores ubucados en la posicion (largo/2)  y (largo/2 + 1)</p>
-					<pre><code>mediana <- function(a){
+					<p>como se observa en el ejemplo <code>a</code>, <code>b</code> y <code>c</code> son parámetros de la función <code>numbrefun</code>.
+						Los parámetros pueden tomar un valor por defecto si se les asigna en la declaración, como por ejemplo: <code>function(a,b=5,c)</code> donde <code>b</code> tomará el valor 5.</p>
+
+					<h3>Funciones para estadística descriptiva</h3>
+
+<h4><b>Mediana</b></h4>
+<p>Representa el valor de la variable de posición central en un conjunto de datos ordenados.</p>
+
+<pre><code>mediana <- function(a){
   if(length(a)%%2 == 0){
     b = sort(a)
     m = (b[length(b)/2] + b[(length(b)/2)+1])/2
@@ -395,17 +403,282 @@ nums[50:60]</code></pre>
   }
   return(m)
 }</code></pre>
-				<pre><code>x = c(1,2,3,4,5)
-mediana(x)
-## [1] 3</code></pre>
+<hr />
 
+
+<h4><b>Moda</b></h4>
+<p>La moda es el valor con mayor frecuencia en una distribución de datos</p>
+
+<pre><code>moda <- function(a){
+  repe = 0
+  for(i in a){
+    n_veces = length(which(a == i))
+    if(n_veces > repe){
+      repe = n_veces
+    }
+  }
+  modas = c()
+  for(i in a){
+    n_veces = length(which(a == i))
+    if(n_veces == repe){
+      if(!(is.element(i,modas))){
+        modas = c(modas,i)
+      }
+    }
+  }
+  return(modas)
+}</pre></code>
+<hr />
+
+<h4><b>Media</b></h4>
+<p>La media corresponde a un valor caracteristico de un conjunto de datos, es la suma de todos los datos dividida entre el número total de datos</p>
+
+<pre><code>media <- function(a){
+  sum = 0
+  for(i in 1:length(a)){
+    sum = sum + a[i]
+  }
+  med = sum / length(a)
+  return(med)
+}</pre></code>
+<hr />
+
+<h4><b>Percentil</b></h4>
+<p>El percentil es una medida de posición usada en estadística que indica, una vez ordenados los datos de menor a mayor, el valor de la variable por debajo del cual se encuentra un porcentaje dado de observaciones en un grupo de observaciones</p>
+
+<pre><code>percentil <- function(v,num){
+  x = sort(v) #datos ordenados
+  a = num/100
+  i = a*(length(x)+1)
+  e = as.integer(i) #parte entera
+  d = i - e #parte decimal
+  p = (1-d) * x[e]+ (d * x[e+1])
+  return(p)
+  }
+</pre></code>
+<hr />
+
+<h4><b>Cuartil</b></h4>
+<p>Los cuartiles son los tres valores que dividen un conjunto de datos ordenados en cuatro partes porcentualmente iguales</p>
+
+<pre><code>cuartil <- function(v,n=0){
+  x = sort(v)
+  Q1 = percentil(x,25)
+  Q2 = percentil(x,50)
+  Q3 = percentil(x,75)
+  Q = c(Q1,Q2,Q3)
+  if(n==1){
+    return(Q1)
+  }
+  if(n==2){
+    return(Q2)
+  }
+  if(n==3){
+    return(Q3)
+  }
+  else{
+    cat("Q1 =",Q1,"Q2 =",Q2,"Q3 =",Q3,"\n")
+    return(Q)
+
+  }
+}
+</pre></code>
+<hr />
+
+<h4><b>Rango</b></h4>
+<p>Permite obtener una idea de la dispersión de los datos, diferencia entre el dato mayor y el menor</p>
+
+<pre><code>rango <- function(v){
+  x = sort(v)
+  rang = x[length(x)] - x[1]
+  return(rang)
+}
+</pre></code>
+<hr />
+
+<h4><b>Rango Intercuartil</b></h4>
+<p>la diferencia entre el tercer y el primer cuartil de una distribución</p>
+
+<pre><code>rango_ic <- function(v){
+  rang_ic= cuartil(v,3) - cuartil(v,1)
+  return(rang_ic)
+}
+</pre></code>
+<hr />
+
+<h4><b>Varianza</b></h4>
+<p> Es una medida de dispersión definida como la esperanza del cuadrado de la desviación de dicha variable respecto a su media.</p>
+
+<pre><code>varianza<-function(v){
+  sum = 0
+  for(i in 1:length(v)){
+    aux = (v[i] - media(v))^2
+    sum = sum + aux
+  }
+  vari = sum/( length(v)- 1)
+  return(vari)
+}
+</pre></code>
+<hr />
+
+<h4><b>Desviacion Estandar</b></h4>
+<p> es una medida del grado de dispersión de los datos con respecto al valor promedio. Se define como la raíz cuadrada de la varianza de la variable.</p>
+
+<pre><code>desviacion_e <- function(v){
+  x = sqrt(varianza(v))
+  return(x)
+}
+</pre></code>
+<hr />
+
+<h4><b>Desviacion Media</b></h4>
+<p>Da información de lo alejado o cerca que está un dato de los demás datos del conjunto</p>
+
+<pre><code>desviacion_m <- function(v){
+  sum = 0
+  for(i in 1:length(v)){
+    aux = abs(v[i] - media(v))
+    sum = sum + aux
+  }
+  v_med = sum/length(v)
+  return(v_med)
+}
+</pre></code>
+<hr />
+
+<h4><b>Coeficiente de variacion</b></h4>
+<p>Expresa la desviación estándar como porcentaje de la media aritmética, mostrando una mejor interpretación porcentual del grado de variabilidad que la desviación estándar.</p>
+
+<pre><code>coeficiente_v <- function(v){
+  cv = desviacion_e(v)/media(v)
+  cv_p = cv*100
+  return(cv_p)
+}
+</pre></code>
+<hr />
+
+<h4><b>Barreras de Tukey</b></h4>
+<p>Consiste encrear intervalos en torno al primer y tercer cuartil para la identificacion de datos atipicos</p>
+
+<pre><code>tukey <- function(v){
+  ri = rango_ic(v)
+  Q1 = cuartil(v,1)
+  Q3 = cuartil(v,3)
+  BII = Q1 - 1.5*(ri)
+  BIS = Q3 + 1.5*(ri)
+  BEI = Q1 - 3*(ri)
+  BES = Q3 + 3*(ri)
+  cat("Barreras: BEI = ",BEI,"," , " BII = ",BII,","," BIS = ",BIS,","," BES = ",BES,"\n")
+  barreras = c(BEI,BII,BIS,BES)
+  return(barreras)
+}
+</pre></code>
+<hr />
+
+<h4><b>Coeficiente de Asimetria o Sesgo</b></h4>
+<p>Permite identificar y describir la manera como los datos tiende a reunirse de acuerdo con la frecuencia con que se hallen dentro de la distribución</p>
+
+<pre><code>sesgo <- function(v){
+  sum = 0
+  n = length(v)
+  de = desviacion_e(v)
+  for(i in 1:n){
+    aux = (v[i]-media(v))^3 /(de)^3
+    sum = sum + aux
+  }
+  return(sum)
+}
+</pre></code>
+<hr />
+
+<h4><b>Coeficiente de Curtosis</b></h4>
+<p>La curtosis mide el grado de agudeza o achatamiento de una distribución con relación a la distribución normal</p>
+
+<pre><code>curtosis <- function(v){
+  sum = 0
+  de = desviacion_e(v)
+  for(i in 1:length(v)){
+    aux = (v[i]-media(v))^4 / (de)^4
+    sum = sum + aux
+  }
+  return(sum)
+}
+
+</pre></code>
 			</section>
 			<hr />
 
-<h3>2.7 : </h3>
+				<a id="expl"></a>
+				<section class="wrapper">
+					<h3>Función Explorar</h3>
+					<p>Utilizando las funciones definidas previamente, crearemos una función “explora” cuyo fin será entregar en una tabla un reporte estadístico de un conjunto de datos especificado de ese modo acceder a toda la información en un solo comando.</p>
+					<pre><code>explorar <- function(v){
+  prom = media(v)
+  mod = moda(v)
+  med = mediana(v)
+  cuart = cuartil(v)
+  rang = rango(v)
+  ri = rango_ic(v)
+  var = varianza(v)
+  cv = coeficiente_v(v)
+  s = desviacion_e(v)
+  dm = desviacion_m(v)
+  tuk = tukey(v)
+  ses = sesgo(v)
+  k = curtosis(v)
+  q1 = cuart[1]
+  q2 = cuart[2]
+  q3 = cuart[3]
+  bei = tuk[1]
+  bii = tuk[2]
+  bis = tuk[3]
+  bes = tuk[4]
+  Parametro = c(" ","datos ","maximo ","minimo ","media ","moda ",
+                "mediana ","rango ","rango intercuartil ","cuartil 1 ","cuartil 2 ","cuartil 3 ",
+                "varianza ","coeficiente de variacion %","desviacion estandar ","desviacion media ","barreras de tukey:   ",
+                "exterior inferior ","interior inferior ","interior superior ","exterior superior ",
+                "coeficiente de asimetria ","curtosis ")
+  Valor = c(" ",paste(v,collapse = ","), max(v), min(v), prom, paste(mod,collapse = ","), med, rang,
+            ri, q1, q2, q3, var, cv, s, dm, "", bei, bii, bis, bes, ses, k)
+  tabla = data.frame(Parametro,Valor)
+  return(tabla)
+}
+</pre></code>
 
-<hr />
+<pre><code>datos = c(1,5,20,10,6,15,22,11,10)
+explorar(datos)
 
+Q1 = 5.5 Q2 = 10 Q3 = 17.5
+Barreras: BEI =  -30.5 ,  BII =  -12.5 ,  BIS =  35.5 ,  BES =  53.5
+                    Parametro                   Valor
+1
+2                      datos  1,5,20,10,6,15,22,11,10
+3                     maximo                       22
+4                     minimo                        1
+5                      media         11.1111111111111
+6                       moda                       10
+7                    mediana                       10
+8                      rango                       21
+9         rango intercuartil                       12
+10                 cuartil 1                      5.5
+11                 cuartil 2                       10
+12                 cuartil 3                     17.5
+13                  varianza         47.6111111111111
+14 coeficiente de variacion %        62.1007246334534
+15       desviacion estandar         6.90008051482815
+16          desviacion media         5.25925925925926
+17      barreras de tukey:
+18         exterior inferior                    -30.5
+19         interior inferior                    -12.5
+20         interior superior                     35.5
+21         exterior superior                     53.5
+22  coeficiente de asimetria         1.99081850668208
+23                  curtosis         14.5852505302161
+
+
+</pre></code>
+
+				</section>
 
 </section>
 
